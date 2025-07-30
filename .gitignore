@@ -1,0 +1,35 @@
+# Bytecode / C extensions
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+myvenv/
+.env/
+.env.*
+
+# SQLite or DB files (optional persist folder is fine)
+*.db
+data/
+
+
+# Docker generated files
+docker-compose.override.yml
+Dockerfile.*
+
+# Editor/project files
+.idea/
+.vscode/
+*.iml
+
+# MacOS
+.DS_Store
+
+# Logs and Local
+*.log
+
+
+
+# pytest cache
+.pytest_cache/
