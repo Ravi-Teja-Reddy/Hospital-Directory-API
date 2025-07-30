@@ -10,6 +10,26 @@ from app.schemas import HospitalCreate, HospitalResponse, HospitalUpdate
 
 router = APIRouter()
 
+@router.get("/", tags=["Root"])
+def read_root():
+    """
+    Root endpoint that provides basic information about the Hospital Directory API
+    """
+    return {
+        "message": "Welcome to the Hospital Directory API",
+        "version": "1.0.0",
+        "description": "API for managing hospital information",
+        "endpoints": {
+            "hospitals": "/hospitals",
+            "get_hospital": "/hospitals/{hospital_id}",
+            "create_hospital": "POST /hospitals",
+            "update_hospital": "PUT /hospitals/{hospital_id}",
+            "delete_hospital": "DELETE /hospitals/{hospital_id}"
+        },
+        "docs": "/docs",
+        "redoc": "/redoc"
+    }
+
 def get_db():
     db = SessionLocal()
     try:
